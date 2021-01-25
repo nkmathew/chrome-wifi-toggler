@@ -1,0 +1,27 @@
+{
+  "name": "chrome-wifi-toggler",
+  "version": "0.1.0",
+  "description": "Adds an action menu button for toggling wifi on/off on Linux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/nkmathew/chrome-wifi-toggler.git"
+  },
+  "keywords": [
+    "chrome"
+  ],
+  "author": "nkmathew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/nkmathew/chrome-wifi-toggler/issues"
+  },
+  "homepage": "https://gitlab.com/nkmathew/chrome-wifi-toggler#readme",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  }
+}
