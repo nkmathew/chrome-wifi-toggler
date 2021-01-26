@@ -5,10 +5,9 @@
   "version": "0.1.0",
 
   "background": {
-    "scripts": ["cwt-background.js"]
+    "scripts": ["cwt-background.js", "chrome-api.js"]
   },
-  "content_scripts": [
-  ],
+  "content_scripts": [],
   "icons": {
     "16": "images/wifi6.png",
     "48": "images/wifi6.png",
@@ -17,11 +16,5 @@
   "browser_action": {
     "default_icon": "images/wifi6.png"
   },
-  "permissions": [
-    "notifications",
-    "contextMenus",
-    "tabs",
-    "http://*/*",
-    "https://*/*"
-  ]
+  "permissions": ["nativeMessaging"]
 }

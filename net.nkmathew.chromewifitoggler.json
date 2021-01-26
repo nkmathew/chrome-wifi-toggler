@@ -1,0 +1,7 @@
+{
+  "name": "net.nkmathew.chromewifitoggler",
+  "description": "Chrome WiFi Toggler",
+  "path": "/home/witman/workspace/personal/chrome-wifi-toggler/NativeMessagingHost.py",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://aflkodlgimdmhgamflgpfcfikcimgmdi/"]
+}
