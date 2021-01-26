@@ -18,6 +18,12 @@ function nativeConnection() {
       chrome.browserAction.setBadgeText({ text: 'OFF' });
     } else {
       chrome.browserAction.setBadgeText({ text: '' });
+      let tab = await getTab();
+      if (tab.url.includes(`//${tab.title}/`)) {
+        setTimeout(() => {
+          chrome.tabs.reload(tab.id);
+        }, 7e3);
+      }
     }
   });
   port.onDisconnect.addListener(() => {
@@ -32,3 +38,18 @@ chrome.browserAction.onClicked.addListener((tab) => {
 });
 
 nativeConnection();
+
+/**
+ * Detect and reload tabs whose loading was interrupted by the network change
+ */
+chrome.tabs.onActivated.addListener(async (tab) => {
+  tab = await getTab(tab.tabId);
+  if (!tab.url.includes(`//${tab.title}/`)) {
+    return;
+  }
+  chrome.tabs.executeScript(tab.id, { code: '' }, (res) => {
+    if (chrome.runtime.lastError) {
+      chrome.tabs.reload(tab.id);
+    }
+  });
+});
